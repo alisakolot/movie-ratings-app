@@ -24,7 +24,7 @@ class User(db.Model):
 class Movie(db.Model):
     """A Movie."""
 
-    __tablename__ = 'movie'
+    __tablename__ = 'movies'
 
     movie_id = db.Column(db.Integer,
                         autoincrement=True,
@@ -55,7 +55,6 @@ class Rating(db.Model):
 
     movie = db.relationship('Movie', backref='ratings')
     user = db.relationship('User', backref='ratings')
-
 
 
     def __repr__(self):
